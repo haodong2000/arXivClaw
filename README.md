@@ -14,7 +14,7 @@ In default settings (fetching 500 latest arXiv papers per weekday, `LLM_MODEL=ge
 - Uses threshold-first delivery with fallback minimum count:
     - if papers above `MIN_RELEVANCE_SCORE` are greater than `MIN_DAILY_PUSH_COUNT`, sends all above-threshold papers (no upper limit)
     - otherwise sends top `MIN_DAILY_PUSH_COUNT` papers by score
-- Runs automatically at 4:00 AM (by default) Los Angeles time on weekdays
+- Runs automatically at 2:00 PM (by default) Los Angeles time on weekdays
 - Sends one startup/init email when the process starts, including a brief explanation of key runtime settings
 
 📮 Startup Confirmation Email (an example) ⬇️
@@ -123,7 +123,7 @@ When `RUN_ONCE=true`, the app will:
 In `.env`, set:
 
 - `RUN_ONCE=false`
-- `RUN_HOUR=4` (24-hour format)
+- `RUN_HOUR=14` (24-hour format)
 - `RUN_MINUTE=0`
 - `TIMEZONE=America/Los_Angeles`
 - `INIT_EMAIL_ON_STARTUP=true` (set `false` if you do not want startup confirmation email)

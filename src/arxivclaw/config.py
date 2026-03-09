@@ -33,7 +33,7 @@ class Settings(BaseSettings):
     state_db_path: str = Field(default="data/state.db", alias="STATE_DB_PATH")
     log_level: str = Field(default="INFO", alias="LOG_LEVEL")
     timezone: str = Field(default="America/Los_Angeles", alias="TIMEZONE")
-    run_hour: int = Field(default=4, alias="RUN_HOUR")
+    run_hour: int = Field(default=14, alias="RUN_HOUR")
     run_minute: int = Field(default=0, alias="RUN_MINUTE")
     run_once: bool = Field(default=False, alias="RUN_ONCE")
     init_email_on_startup: bool = Field(default=True, alias="INIT_EMAIL_ON_STARTUP")
