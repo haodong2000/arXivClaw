@@ -2,7 +2,7 @@
 
 👤 Author: GPT-5.3-Codex
 
-arXivClaw is a daily arXiv recommender that fetches new papers, scores relevance with an LLM, and sends digest emails.
+arXivClaw is a daily arXiv recommender that fetches new papers, scores relevance, and sends digest emails.
 
 ## ✨ What this tool does
 
