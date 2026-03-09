@@ -1,4 +1,4 @@
-# arXivClaw: Free, Fully Automated arXiv Recommender 📚🤖
+# arXivClaw: Free, Fully Automated arXiv Recommender 🤖
 
 👤 Authors: GPT-5.3-Codex
 
