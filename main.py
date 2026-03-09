@@ -62,7 +62,7 @@ def send_startup_email_notice() -> None:
     )
 
     summary_items = [
-        ("ARXIV_QUERY", "arXiv query categories/keywords used to fetch papers"),
+        ("ARXIV_QUERY", f"arXiv query categories/keywords used to fetch papers = {settings.arxiv_query}"),
         ("ARXIV_MAX_RESULTS", f"max fetched papers per run = {settings.arxiv_max_results}"),
         ("KEYWORDS", f"matching keywords = {', '.join(settings.keyword_list) if settings.keyword_list else '(empty)'}"),
         ("MIN_RELEVANCE_SCORE", f"primary score threshold = {settings.min_relevance_score}"),

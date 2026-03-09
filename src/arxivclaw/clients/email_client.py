@@ -26,7 +26,7 @@ class EmailClient:
         self._email_to = email_to
 
     def send_digest(self, papers: list[ScoredPaper]) -> None:
-        date_str = datetime.now().strftime("%Y%m%d")
+        date_str = datetime.now().strftime("%Y-%m-%d")
         subject = f"arXivClaw | Daily Research Picks | {date_str} ({len(papers)} papers)"
         body = self._build_body(papers)
         msg = MIMEText(body, "html", "utf-8")
