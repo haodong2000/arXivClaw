@@ -96,7 +96,7 @@ In `.env`, set:
 
 - `RUN_ONCE=true`
 - `ARXIV_MAX_RESULTS=5` (small and cheap test)
-- `ARXIV_TIMEOUT_SECONDS=60` (recommended if your network is slow)
+- `ARXIV_TIMEOUT_SECONDS=30` (recommended if your network is slow)
 - `ARXIV_MAX_RETRIES=3`
 
 Run:
