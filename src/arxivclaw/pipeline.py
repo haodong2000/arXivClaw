@@ -65,7 +65,7 @@ class RecommenderPipeline:
             total_sent = len(selected)
 
             if selected:
-                self.email_client.send_digest(selected)
+                self.email_client.send_digest(selected, total_fetched=total_fetched)
                 logger.info("Digest email sent with %d papers", len(selected))
             else:
                 logger.info("No paper selected for digest")

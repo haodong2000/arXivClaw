@@ -69,12 +69,14 @@ class LLMClient:
     @staticmethod
     def _build_prompt(paper: Paper, keywords: list[str]) -> str:
         keyword_text = ", ".join(keywords) if keywords else ""
+        abstract_text = paper.summary.strip()
         return (
-            "Evaluate relevance of an arXiv paper based only on provided keywords and title. "
-            "Do not use abstract, authors, or categories for scoring. "
+            "Evaluate relevance of an arXiv paper based on provided keywords, title, and abstract. "
+            "Do not use authors or categories for scoring. "
             "Return valid JSON only with keys: score (0-100), relevance, matched_keywords (array), reasoning.\n\n"
             f"Keywords: {keyword_text}\n"
             f"Title: {paper.title}\n"
+            f"Abstract: {abstract_text}\n"
         )
 
     @staticmethod

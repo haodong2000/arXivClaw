@@ -7,7 +7,7 @@ arXivClaw is a daily arXiv recommender that fetches new papers, scores relevance
 ## ✨ What this tool does
 
 - Fetches new papers from arXiv for your selected categories/query
-- Scores each paper using `keywords + title` (abstract excluded to save LLM quota)
+- Scores each paper using `keywords + title + abstract`
 - Sorts papers by score (high to low)
 - Uses threshold-first delivery with fallback minimum count:
     - if papers above `MIN_RELEVANCE_SCORE` are greater than `MIN_DAILY_PUSH_COUNT`, sends all above-threshold papers (no upper limit)

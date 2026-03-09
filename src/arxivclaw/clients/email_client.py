@@ -25,10 +25,10 @@ class EmailClient:
         self._email_from = email_from
         self._email_to = email_to
 
-    def send_digest(self, papers: list[ScoredPaper]) -> None:
+    def send_digest(self, papers: list[ScoredPaper], total_fetched: int) -> None:
         date_str = datetime.now().strftime("%Y-%m-%d")
         subject = f"arXivClaw | Daily Research Picks | {date_str} ({len(papers)} papers)"
-        body = self._build_body(papers)
+        body = self._build_body(papers, total_fetched)
         msg = MIMEText(body, "html", "utf-8")
         msg["Subject"] = subject
         msg["From"] = self._email_from
@@ -54,8 +54,11 @@ class EmailClient:
             server.sendmail(self._email_from, [self._email_to], msg.as_string())
 
     @staticmethod
-    def _build_body(papers: list[ScoredPaper]) -> str:
-        lines = ["<html><body>"]
+    def _build_body(papers: list[ScoredPaper], total_fetched: int) -> str:
+        lines = [
+            "<html><body>",
+            f"<p>Total papers fetched this run: <strong>{total_fetched}</strong>.</p>",
+        ]
         for i, item in enumerate(papers, start=1):
             authors = ", ".join(html.escape(author) for author in item.paper.authors)
             lines.extend(
