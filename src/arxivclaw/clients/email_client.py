@@ -78,8 +78,8 @@ class EmailClient:
             "<p>Current runtime settings overview:</p>",
             "<ul>",
         ]
-        for key, desc in summary_items:
-            lines.append(f"<li><strong>{html.escape(key)}</strong>: {html.escape(desc)}</li>")
+        for key, desc, val in summary_items:
+            lines.append(f"<li>{html.escape(key)} ({html.escape(desc)}): <strong>{html.escape(val)}</strong></li>")
         lines.extend(
             [
                 "</ul>",

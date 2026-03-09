@@ -62,17 +62,17 @@ def send_startup_email_notice() -> None:
     )
 
     summary_items = [
-        ("ARXIV_QUERY", f"arXiv query categories/keywords used to fetch papers = {settings.arxiv_query}"),
-        ("ARXIV_MAX_RESULTS", f"max fetched papers per run = {settings.arxiv_max_results}"),
-        ("KEYWORDS", f"matching keywords = {', '.join(settings.keyword_list) if settings.keyword_list else '(empty)'}"),
-        ("MIN_RELEVANCE_SCORE", f"primary score threshold = {settings.min_relevance_score}"),
-        ("MIN_DAILY_PUSH_COUNT", f"minimum papers to send via backfill = {settings.min_daily_push_count}"),
-        ("LLM_MODEL", f"LLM model = {settings.llm_model}"),
-        ("LLM_REQUEST_INTERVAL_SECONDS", f"sleep between scoring requests = {settings.llm_request_interval_seconds}s"),
-        ("TIMEZONE", f"scheduler timezone = {settings.timezone}"),
-        ("RUN_TIME", f"weekday schedule = {settings.run_hour:02d}:{settings.run_minute:02d}"),
-        ("RUN_ONCE", f"run-once debug mode = {settings.run_once}"),
-        ("STATE_DB_PATH", f"state db path = {settings.state_db_path}"),
+        ("ARXIV_QUERY", "arXiv query categories/keywords used to fetch papers", f"{settings.arxiv_query}"),
+        ("ARXIV_MAX_RESULTS", "max fetched papers per run", f"{settings.arxiv_max_results}"),
+        ("KEYWORDS", "matching keywords", f"{', '.join(settings.keyword_list) if settings.keyword_list else '(empty)'}"),
+        ("MIN_RELEVANCE_SCORE", "primary score threshold", f"{settings.min_relevance_score}"),
+        ("MIN_DAILY_PUSH_COUNT", "minimum papers to send via backfill", f"{settings.min_daily_push_count}"),
+        ("LLM_MODEL", "LLM model", f"{settings.llm_model}"),
+        ("LLM_REQUEST_INTERVAL_SECONDS", "sleep between scoring requests", f"{settings.llm_request_interval_seconds}s"),
+        ("TIMEZONE", "scheduler timezone", f"{settings.timezone}"),
+        ("RUN_TIME", "weekday schedule", f"{settings.run_hour:02d}:{settings.run_minute:02d}"),
+        ("RUN_ONCE", "run-once debug mode", f"{settings.run_once}"),
+        ("STATE_DB_PATH", "state db path", f"{settings.state_db_path}"),
     ]
 
     try:
