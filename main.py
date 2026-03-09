@@ -15,7 +15,11 @@ from arxivclaw.storage.state_store import StateStore
 
 
 def build_pipeline() -> RecommenderPipeline:
-    arxiv_client = ArxivClient()
+    arxiv_client = ArxivClient(
+        timeout_seconds=settings.arxiv_timeout_seconds,
+        max_retries=settings.arxiv_max_retries,
+        retry_backoff_seconds=settings.arxiv_retry_backoff_seconds,
+    )
     llm_client = LLMClient(
         base_url=settings.llm_base_url,
         api_key=settings.llm_api_key,
@@ -41,11 +45,16 @@ def build_pipeline() -> RecommenderPipeline:
     )
 
 
-def run_job() -> None:
+def run_job(raise_on_error: bool = False) -> None:
     logging.info("Starting scheduled job at %s", datetime.now().isoformat())
     pipeline = build_pipeline()
-    result = pipeline.run_once()
-    logging.info("Job finished: %s", result)
+    try:
+        result = pipeline.run_once()
+        logging.info("Job finished: %s", result)
+    except Exception:
+        logging.exception("Scheduled job failed")
+        if raise_on_error:
+            raise
 
 
 def send_startup_email_notice() -> None:
@@ -94,7 +103,7 @@ def main() -> None:
     send_startup_email_notice()
 
     if settings.run_once:
-        run_job()
+        run_job(raise_on_error=True)
         return
 
     scheduler = BlockingScheduler(timezone=settings.timezone)

@@ -96,6 +96,8 @@ In `.env`, set:
 
 - `RUN_ONCE=true`
 - `ARXIV_MAX_RESULTS=5` (small and cheap test)
+- `ARXIV_TIMEOUT_SECONDS=60` (recommended if your network is slow)
+- `ARXIV_MAX_RETRIES=3`
 
 Run:
 
@@ -144,6 +146,11 @@ Try these steps:
 - No scoring logs appear:
     - In normal mode (`RUN_ONCE=false`), already-processed papers are deduplicated.
     - Use `RUN_ONCE=true` when debugging.
+
+- `ReadTimeout` appears when fetching arXiv:
+    - Increase `ARXIV_TIMEOUT_SECONDS` (for example `60` or `90`).
+    - Reduce `ARXIV_MAX_RESULTS` (for example `100` for daily runs).
+    - Keep `ARXIV_MAX_RETRIES` at `3` or higher for unstable networks.
 
 ## 8) 🗂️ Project structure
 

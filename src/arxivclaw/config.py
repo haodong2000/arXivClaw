@@ -9,6 +9,9 @@ class Settings(BaseSettings):
 
     arxiv_query: str = Field(default="cat:cs.AI OR cat:cs.LG", alias="ARXIV_QUERY")
     arxiv_max_results: int = Field(default=500, alias="ARXIV_MAX_RESULTS")
+    arxiv_timeout_seconds: int = Field(default=30, alias="ARXIV_TIMEOUT_SECONDS")
+    arxiv_max_retries: int = Field(default=3, alias="ARXIV_MAX_RETRIES")
+    arxiv_retry_backoff_seconds: float = Field(default=2.0, alias="ARXIV_RETRY_BACKOFF_SECONDS")
 
     llm_base_url: str = Field(alias="LLM_BASE_URL")
     llm_api_key: str = Field(alias="LLM_API_KEY")
