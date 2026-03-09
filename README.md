@@ -77,7 +77,7 @@ Quota reminder: Before large runs, verify your Brevo sending limits and remainin
 ```dotenv
 LLM_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai
 LLM_API_KEY=YOUR_GEMINI_API_KEY
-LLM_MODEL=gemini-2.5-flash
+LLM_MODEL=gemini-3.1-flash-lite-preview
 ```
 
 3. Set your interests:
