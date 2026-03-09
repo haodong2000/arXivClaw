@@ -44,7 +44,7 @@ class LLMClient:
 
     def _post_with_retry(self, client: httpx.Client, headers: dict, data: dict) -> httpx.Response:
         max_attempts = 4
-        base_delay_seconds = 3.0
+        base_delay_seconds = 5.0
 
         last_exception: Exception | None = None
         for attempt in range(1, max_attempts + 1):

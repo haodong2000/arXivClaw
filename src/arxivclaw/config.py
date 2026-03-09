@@ -8,13 +8,13 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
     arxiv_query: str = Field(default="cat:cs.AI OR cat:cs.LG", alias="ARXIV_QUERY")
-    arxiv_max_results: int = Field(default=1000, alias="ARXIV_MAX_RESULTS")
+    arxiv_max_results: int = Field(default=500, alias="ARXIV_MAX_RESULTS")
 
     llm_base_url: str = Field(alias="LLM_BASE_URL")
     llm_api_key: str = Field(alias="LLM_API_KEY")
     llm_model: str = Field(default="qwen-plus", alias="LLM_MODEL")
     llm_timeout_seconds: int = Field(default=60, alias="LLM_TIMEOUT_SECONDS")
-    llm_request_interval_seconds: float = Field(default=3.0, alias="LLM_REQUEST_INTERVAL_SECONDS")
+    llm_request_interval_seconds: float = Field(default=5.0, alias="LLM_REQUEST_INTERVAL_SECONDS")
 
     keywords: str = Field(default="", alias="KEYWORDS")
     min_relevance_score: float = Field(default=50, alias="MIN_RELEVANCE_SCORE")

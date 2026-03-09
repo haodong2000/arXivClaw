@@ -113,7 +113,7 @@ When `RUN_ONCE=true`, the app will:
 In `.env`, set:
 
 - `RUN_ONCE=false`
-- `RUN_HOUR=20` (24-hour format)
+- `RUN_HOUR=19` (24-hour format)
 - `RUN_MINUTE=0`
 - `TIMEZONE=America/Los_Angeles`
 - `INIT_EMAIL_ON_STARTUP=true` (set `false` if you do not want startup confirmation email)
