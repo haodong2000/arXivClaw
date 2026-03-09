@@ -17,10 +17,10 @@ In default settings (fetching 500 latest arXiv papers per weekday, `LLM_MODEL=ge
 - Runs automatically at 2:00 PM (by default) Los Angeles time on weekdays
 - Sends one startup/init email when the process starts, including a brief explanation of key runtime settings
 
-📮 Startup Confirmation Email (an example) ⬇️
+📮 **Startup Confirmation Email (an example)** ⬇️
 ![start](media/startup_email_example.png)
 
-📮 Daily Digest Email (an example) ⬇️
+📮 **Daily Digest Email (an example)** ⬇️
 ![start](media/digest_email_example.png)
 
 ## 0) 🧾 Understand `.env.example` vs `.env`
