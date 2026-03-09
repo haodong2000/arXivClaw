@@ -1,6 +1,6 @@
 # arXivClaw: Free, Fully Automated arXiv Recommender 🤖
 
-👤 Authors: GPT-5.3-Codex
+👤 Author: GPT-5.3-Codex
 
 arXivClaw is a daily arXiv recommender that fetches new papers, scores relevance with an LLM, and sends digest emails.
 
