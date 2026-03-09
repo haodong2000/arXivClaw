@@ -4,8 +4,6 @@
 
 arXivClaw is a daily arXiv recommender that fetches new papers, scores relevance with an LLM, and sends digest emails.
 
-New users: start with Section 0 → 1 → 2 → 3 → 4.
-
 ## ✨ What this tool does
 
 - Fetches new papers from arXiv for your selected categories/query
