@@ -4,6 +4,8 @@
 
 arXivClaw is a daily arXiv recommender that fetches new papers, scores relevance, and sends digest emails.
 
+In default settings (fetching 500 latest arXiv papers per weekday, `LLM_MODEL=gemini-3.1-flash-lite-preview`), arXivClaw is **free**.
+
 ## ✨ What this tool does
 
 - Fetches new papers from arXiv for your selected categories/query
@@ -12,8 +14,14 @@ arXivClaw is a daily arXiv recommender that fetches new papers, scores relevance
 - Uses threshold-first delivery with fallback minimum count:
     - if papers above `MIN_RELEVANCE_SCORE` are greater than `MIN_DAILY_PUSH_COUNT`, sends all above-threshold papers (no upper limit)
     - otherwise sends top `MIN_DAILY_PUSH_COUNT` papers by score
-- Runs automatically at 4:00 AM Los Angeles time on weekdays
+- Runs automatically at 4:00 AM (by default) Los Angeles time on weekdays
 - Sends one startup/init email when the process starts, including a brief explanation of key runtime settings
+
+📮 Startup Confirmation Email (an example) ⬇️
+![start](media/startup_email_example.png)
+
+📮 Daily Digest Email (an example) ⬇️
+![start](media/digest_email_example.png)
 
 ## 0) 🧾 Understand `.env.example` vs `.env`
 

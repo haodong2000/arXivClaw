@@ -79,7 +79,7 @@ def send_startup_email_notice() -> None:
         ("LLM_MODEL", "LLM model", f"{settings.llm_model}"),
         ("LLM_REQUEST_INTERVAL_SECONDS", "sleep between scoring requests", f"{settings.llm_request_interval_seconds}s"),
         ("TIMEZONE", "scheduler timezone", f"{settings.timezone}"),
-        ("RUN_TIME", "weekday schedule", f"{settings.run_hour:02d}:{settings.run_minute:02d}"),
+        ("RUN_TIME", "weekday schedule, email delivery may take about 1.5 hour", f"{settings.run_hour:02d}:{settings.run_minute:02d}"),
         ("RUN_ONCE", "run-once debug mode", f"{settings.run_once}"),
         ("STATE_DB_PATH", "state db path", f"{settings.state_db_path}"),
     ]
