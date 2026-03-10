@@ -33,6 +33,7 @@ def build_pipeline() -> RecommenderPipeline:
         smtp_password=settings.smtp_password,
         email_from=settings.email_from,
         email_to=settings.email_to,
+        arxiv_query=settings.arxiv_query,
     )
     state_store = StateStore(db_path=settings.state_db_path)
 
@@ -68,6 +69,7 @@ def send_startup_email_notice() -> None:
         smtp_password=settings.smtp_password,
         email_from=settings.email_from,
         email_to=settings.email_to,
+        arxiv_query=settings.arxiv_query,
     )
 
     summary_items = [

@@ -17,6 +17,7 @@ class EmailClient:
         smtp_password: str,
         email_from: str,
         email_to: str,
+        arxiv_query: str,
     ) -> None:
         self._smtp_host = smtp_host
         self._smtp_port = smtp_port
@@ -24,10 +25,16 @@ class EmailClient:
         self._smtp_password = smtp_password
         self._email_from = email_from
         self._email_to = email_to
+        self._arxiv_query = arxiv_query
+
+    @staticmethod
+    def _query_for_subject(arxiv_query: str) -> str:
+        return arxiv_query.replace("cat:", "").strip()
 
     def send_digest(self, papers: list[ScoredPaper], total_fetched: int) -> None:
         date_str = datetime.now().strftime("%Y-%m-%d")
-        subject = f"arXivClaw | Daily Research Picks | {date_str} ({len(papers)} papers)"
+        query_str = self._query_for_subject(self._arxiv_query)
+        subject = f"arXivClaw ({query_str}) | Daily Research Picks | {date_str}"
         body = self._build_body(papers, total_fetched)
         msg = MIMEText(body, "html", "utf-8")
         msg["Subject"] = subject
@@ -41,7 +48,8 @@ class EmailClient:
 
     def send_init_notice(self, summary_items: list[tuple[str, str]]) -> None:
         date_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        subject = f"arXivClaw | Startup Confirmation | {date_str}"
+        query_str = self._query_for_subject(self._arxiv_query)
+        subject = f"arXivClaw ({query_str}) | Startup Confirmation | {date_str}"
         body = self._build_init_body(summary_items)
         msg = MIMEText(body, "html", "utf-8")
         msg["Subject"] = subject
