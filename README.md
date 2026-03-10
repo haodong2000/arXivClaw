@@ -1,6 +1,6 @@
 # arXivClaw: Free, Fully Automated arXiv Recommender 🤖
 
-👤 Author: [GPT-5.3-Codex](https://openai.com/index/introducing-gpt-5-3-codex/), [Haodong Li](https://haodong2000.github.io/)
+👤 Authors: [GPT-5.3-Codex](https://openai.com/index/introducing-gpt-5-3-codex/), [Haodong Li](https://haodong2000.github.io/)
 
 arXivClaw is a daily arXiv recommender that fetches new papers, scores relevance, and sends digest emails.
 
