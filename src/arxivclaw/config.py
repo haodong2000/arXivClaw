@@ -7,7 +7,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
-    arxiv_query: str = Field(default="cat:cs.AI OR cat:cs.LG", alias="ARXIV_QUERY")
+    arxiv_query: str = Field(default="cat:cs.AI OR cat:cs.CV", alias="ARXIV_QUERY")
     arxiv_max_results: int = Field(default=500, alias="ARXIV_MAX_RESULTS")
     arxiv_timeout_seconds: int = Field(default=30, alias="ARXIV_TIMEOUT_SECONDS")
     arxiv_max_retries: int = Field(default=3, alias="ARXIV_MAX_RETRIES")
