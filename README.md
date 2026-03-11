@@ -4,7 +4,7 @@
 
 arXivClaw is a daily arXiv recommender that fetches new papers, scores relevance, and sends digest emails.
 
-In default settings (fetching 500 latest arXiv papers per weekday, generally sufficient for 1-2 categories; `LLM_MODEL=gemini-3.1-flash-lite-preview`), arXivClaw is **free**.
+In default settings (fetching 500 latest arXiv papers per weekday, generally sufficient for about 3 categories; `LLM_MODEL=gemini-3.1-flash-lite-preview`), arXivClaw is **free**.
 
 ## ✨ What this tool does
 
